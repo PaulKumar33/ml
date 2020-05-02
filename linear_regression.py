@@ -100,16 +100,16 @@ if __name__ == "__main__":
     #print(x_arr[0][1])
     linear_reg.gradient_descent_batch(x_arr, theta, y_arr, alpha, 4000)
     theta_global = linear_reg.global_theta
-    print(x_arr)
 
     x_plot = []
     y_plot = []
     for j in range(len(x_arr)):
         x_plot.append(x_arr[j][1])
         y_plot.append(np.dot(x_arr[j], np.transpose([theta_global])))
-    print(y_plot)
     plt.plot(x_plot, y_plot)
-    plt.plot(x_plot, y)
-    plt.show()
+    plt.scatter(x_plot, y)
 
-    #linear_reg.LMS(x_test[0], y_test[0], theta_test, alpha)
+    plt.title("Plotting trained trend and true data")
+    plt.xlabel("Feature")
+    plt.ylabel("Output")
+    plt.show()
